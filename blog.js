@@ -1,42 +1,20 @@
-let entries = document.getElementById("entries");
+document.addEventListener('DOMContentLoaded', function() {
+    const postsContainer = document.getElementById('postsContainer');
+    const posts = JSON.parse(localStorage.getItem('blogPosts')) || [];
 
-let numEntries = localStorage.length;
+    if (posts.length === 0) {
+        postsContainer.innerHTML = '<p>No blog posts available.</p>';
+        return;
+    }
 
-let allEntries = JSON.parse(localStorage.getItem("objs"));
-console.log(allEntries);
-
-// for(let i = 0; i < numEntries; i++) {
-//     // let uname = 
-//     // let title = 
-//     // let content = 
-
-//     createEntry();
-
-
-// }
-
-function createEntry() {
-    let entry = document.createElement("div");
-    entry.classList.add("entry");
-
-    let title = document.createElement("p");
-    title.classList.add("title");
-    
-
-    let content = document.createElement("p");
-    content.classList.add("content");
-    
-
-    let uname = document.classList.add("uname");
-    uname.classList.add("uname");
-    
-
-    entry.appendChild(content);
-    entry.appendChild(title);
-    entry.appendChild(uname);
-
-    entries.appendChild(entry);
-}
-
-console.log(localStorage);
+    posts.forEach(post => {
+        const postElement = document.createElement('article');
+        postElement.innerHTML = `
+            <h2>${post.title}</h2>
+            <p><strong>By:</strong> ${post.username}</p>
+            <p>${post.content}</p>
+        `;
+        postsContainer.appendChild(postElement);
+    });
+});
 

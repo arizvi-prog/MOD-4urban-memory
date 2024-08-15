@@ -4,37 +4,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Blog</title>
-    <link rel="stylesheet" href="Assets/css/styles.css">
-    <link rel="stylesheet" href="Assets/css/form.css">
+    <title>Personal Blog - Landing Page</title>
+    <link rel="stylesheet" href="assets/css/form.css">
 </head>
 
 <body>
-    <div id="container">
-        <div id="left">
-            <h1>My First Blog</h1>
-        </div>
-        <div id="right">
-            <h1>What's on your mind?</h1>
-            
-                
-                <p>Username</p>
-                <input type="text" id="uname" name="uname">
-                <p>Title</p>
-                <input type="text" id="title" name="title">
-                <p>Content</p>
-                <textarea id="content" name="content"></textarea>
+    <header>
+        <h1>Personal Blog</h1>
+    </header>
 
-                <!-- <a href='blog.html'> -->
-                    <button id="submit">Submit</button>
-                <!-- </a> -->
+    <main>
+        <form id="blogForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
 
-               
+            <label for="title">Blog Title:</label>
+            <input type="text" id="title" name="title" required>
 
-            
-        </div>
-    </div>
-    <script src="Assets/js/logic.js"></script>
+            <label for="content">Blog Content:</label>
+            <textarea id="content" name="content" rows="5" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        <p>© 2024 Personal Blog</p>
+    </footer>
+
+    <script src="assets/js/form.js"></script>
 </body>
 
 </html>

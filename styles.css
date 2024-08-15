@@ -1,7 +1,15 @@
-#container {
-    display: flex;
+/* Common styles for both pages */
+body.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
 }
 
-#left {
-    width: 50%;
+body.dark-mode header,
+body.dark-mode footer {
+    background-color: #222;
+}
+
+body.dark-mode article {
+    background-color: #444;
+    color: #fff;
 }
